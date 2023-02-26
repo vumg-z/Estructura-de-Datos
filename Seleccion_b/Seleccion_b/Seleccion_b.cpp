@@ -30,7 +30,7 @@ public:
             bool validInput = false;
             int input;
 
-            cout << "Ingresa el numero " << i + 1 << ": ";
+            cout << "Ingresa el numero " << " " << ": ";
             while (!validInput) {
                 if (cin >> input) {
                     validInput = true;
@@ -39,7 +39,7 @@ public:
                 else {
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    cout << "Entrada invalida. Por favor ingresa un número valido: ";
+                    cout << "Entrada invalida. Por favor ingresa un numero valido: ";
                 }
             }
         }
