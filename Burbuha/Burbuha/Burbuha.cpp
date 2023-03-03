@@ -81,17 +81,37 @@ class Burbuja : public Array {
 public:
 
     void burbujaSort() {
-        for (int i = 0; i < size -1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                int aux = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = aux;
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int aux = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = aux;
+                }
             }
-          }
+        }
     }
 
+    void burbujaSortIteracion() {
+        int cont = 0;
+        cout << "iteracion: " << cont << " ";
+        printArray();
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int aux = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = aux;
+                }
+            }
+            cont++;
+            cout << "iteracion: " << cont << " ";
+            printArray();
+        }
+    }
 
 };
+
 
 int main()
 {
@@ -99,7 +119,8 @@ int main()
     array.setSize();
 
     array.agregarNumeros();
-    array.burbujaSort();
-    array.printArray();
+    //array.burbujaSort();
+    array.burbujaSortIteracion();
+    //array.printArray();
 }
 
