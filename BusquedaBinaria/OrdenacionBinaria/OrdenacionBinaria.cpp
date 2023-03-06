@@ -34,18 +34,13 @@ public:
     }
 
 
-    void print() const {
-        std::string nombre = "Uriel";
-        std::string apellido = "Gallardo";
-        int edad = 24;
-        std::string registro = "17100223";
-
-        std::cout << "+------------------------------------+\n";
-        std::cout << "| Registro: " << std::setw(10) << registro << "             \n";
-        std::cout << "| Nombre: " << std::setw(14) << nombre << "           \n";
-        std::cout << "| Apellido: " << std::setw(12) << apellido << "         \n";
-        std::cout << "| Edad: " << std::setw(16) << edad << "                 \n";
-        std::cout << "+------------------------------------+\n";
+    void print()  {
+        cout << "+------------------------------------+\n";
+        cout << "| Registro: " << std::setw(10) << registro << "             \n";
+        cout << "| Nombre: " << std::setw(14) << nombre << "           \n";
+        cout << "| Apellido: " << std::setw(12) << apellido << "         \n";
+        cout << "| Edad: " << std::setw(16) << edad << "                 \n";
+        cout << "+------------------------------------+\n";
     }
 
     Persona(int registro, const char nombre[], const char apellido[], int edad);
@@ -235,6 +230,7 @@ int main() {
                     cout << personasEncontradas.size() << endl;
                     for (int i = 0; i < personasEncontradas.size(); i++) {
                         personasEncontradas[i].print();
+
                     }
                 }
             }
