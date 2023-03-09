@@ -54,7 +54,7 @@ public:
     }
 
     void printArray() {
-        cout << "Arreglo: \n";
+        cout << "\n";
         for (int i = 0; i < size; i++) {
             cout << arr[i] << " ";
         }
@@ -94,6 +94,7 @@ public:
                 arr[minIndex] = aux;
             }
             // Imprimir el arreglo después de cada iteración
+            cout << "iteracion: " << i << ": ";
             printArray();
         }
     }
@@ -124,7 +125,7 @@ char charMenu() {
         }
         else {
             if (printMessage) {
-                cout << "The character is not 'a', 'b'" << endl;
+                cout << "El caracter no es 'a', 'b'" << endl;
                 printMessage = false;
             }
         }
@@ -138,7 +139,7 @@ int intMenu() {
     bool validInput = false;
     bool printMessage = true;
 
-    cout << "ingresa el tamano del array" << endl;
+    cout << "ingresa cuantos datos quieres ordenar" << endl;
 
     while (!validInput) {
         if (printMessage) {
