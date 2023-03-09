@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -19,27 +20,41 @@ public:
     }
 
     void setSize() {
-
         int inputNum;
         bool validInput = false;
         bool printMessage = true;
 
-        cout << "ingresa el tamano del array";
-
         while (!validInput) {
             if (printMessage) {
-                cout << " (ingresa un numero entre 0 y 50): " << endl;
+                cout << "Ingresa el tamano del arreglo (un numero entre 0 y 50): ";
             }
 
-            cin >> inputNum;
+            string input;
+            cin >> input;
 
-            if (inputNum >= 1 && inputNum <= 50) {
-                validInput = true;
+            bool isNumber = true;
+            for (char c : input) {
+                if (!isdigit(c)) {
+                    isNumber = false;
+                    break;
+                }
+            }
+
+            if (!isNumber) {
+                cout << "Error: Debe ingresar un numero." << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
             else {
-                if (printMessage) {
-                    cout << "El numero no esta en el rango de 1 a 50." << endl;
-                    printMessage = false;
+                inputNum = stoi(input);
+                if (inputNum >= 1 && inputNum <= 50) {
+                    validInput = true;
+                }
+                else {
+                    if (printMessage) {
+                        cout << "El numero no esta en el rango de 1 a 50." << endl;
+                        printMessage = false;
+                    }
                 }
             }
         }
@@ -67,7 +82,7 @@ public:
     }
 
     void printArray() {
-        cout << "Arreglo: \n";
+        cout << "\n";
         for (int i = 0; i < size; i++) {
             cout << arr[i] << " ";
         }
